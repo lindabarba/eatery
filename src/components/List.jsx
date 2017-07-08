@@ -1,17 +1,20 @@
- import React, {Component} from 'react';
+ import React from 'react';
  
  const List = (props) => {
-              console.log(props)
-
+    //  console.log(props)
+     let input = props.places.map(function(elem, index){
+                return (
+                    <div className="form-group" key={index}>
+                        <input type="text" value={elem} className="form-control" id="" placeholder="Name"></input>
+                    </div>
+                
+                )
+            })
      return (
         <div>
             {props.title}
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
+            
+            {input}
         </div> 
      )
  };
