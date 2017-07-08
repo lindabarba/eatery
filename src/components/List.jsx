@@ -1,12 +1,11 @@
 import React from 'react';
+import Input from './Input';
 
 const List = (props) => {
-	console.log(props)
+
 	var input = props.places.map(function(elem, index) {
 	  	return (
-				<div className= "form-group" key={index} >
-					<input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email" value={elem}></input>
-	      </div>
+	  		<Input key={index} onPlaceChange={props.onPlaceChange} value={elem} />
 	  		);
 	  })
 	console.log(input);
@@ -19,7 +18,3 @@ const List = (props) => {
 };
 
 export default List;
-
-
-
-
