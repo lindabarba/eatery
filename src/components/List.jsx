@@ -5,7 +5,7 @@ const List = (props) => {
 
 	var input = props.places.map(function(elem, index) {
 	  	return (
-	  		<Input key={index} onPlaceChange={props.onPlaceChange} value={elem} />
+	  		<Input key={index} onPlaceChange={props.onPlaceChange} value={elem} idx={index} />
 	  		);
 	  })
 	console.log(input);

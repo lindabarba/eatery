@@ -12,9 +12,18 @@ class App extends Component {
     }
   }
 
-  onPlaceChange(data) {
-    console.log("change", data.target.value)
+  onToEatChange(evt, idx) {
+    console.log("change to eat", evt.target.value)
+    console.log('this is idx', idx)
   }
+
+  onEatenChange(evt, idx) {
+    console.log("change eaten", evt.target.value)
+    console.log('this is idx', idx)
+
+  }
+
+  // way to know which one we're editing
 
   render() {
     return (
@@ -30,11 +39,11 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <List title="Places to Eat" places={this.state.toEat} onPlaceChange={this.onPlaceChange}/>
+            <List title="Places to Eat" places={this.state.toEat} onPlaceChange={this.onToEatChange} />
             <button className="btn btn-success">+</button>
           </div>
           <div className="col-sm-6">
-            <List title="Places We've Eaten" places={this.state.eaten} onPlaceChange={this.onPlaceChange} />
+            <List title="Places We've Eaten" places={this.state.eaten} onPlaceChange={this.onEatenChange} />
           </div>
         </div>
         <div className="row">
