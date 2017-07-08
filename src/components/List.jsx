@@ -2,16 +2,19 @@ import React from 'react';
 
 const List = (props) => {
 	console.log(props)
+	var input = props.places.map(function(elem, index) {
+	  	return (
+				<div className= "form-group" key={index} >
+					<input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email" value={elem}></input>
+	      </div>
+	  		);
+	  })
+	console.log(input);
 	return (
 		<div>
 			{props.title}
-			<div className= "form-group" >
-				<input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-      </div>
-			<div className="form-group">
-				<input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-			</div>
-		</div>			
+      {input}
+		</div>
 	);
 };
 
