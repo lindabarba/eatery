@@ -1,7 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
+import List from './components/List';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      toEat: ['sushi', 'poke', 'ramen'],
+      eaten: ['american', 'italian', 'vegan']
+    }
+  }
+
   render() {
     return (
       <div className="App container">
@@ -16,23 +25,11 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            Places To Eat
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <button className="btn btn-success">+</button>
+            <List title="Places To Eat" places={this.state.toEat} />
           </div>
+            <button className="btn btn-success">+</button>
           <div className="col-sm-6">
-            Places Eaten
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
+            <List title="Places Eaten" />
           </div>
         </div>
         <div className="row">
