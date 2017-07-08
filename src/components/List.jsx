@@ -1,23 +1,22 @@
- import React from 'react';
- 
- const List = (props) => {
-    //  console.log(props)
-     let input = props.places.map(function(elem, index){
-                return (
-                    <div className="form-group" key={index}>
-                        <input type="text" value={elem} className="form-control" id="" placeholder="Name"></input>
-                    </div>
-                
-                )
-            })
-     return (
-        <div>
-            {props.title}
-            
-            {input}
-        </div> 
-     )
- };
- 
+import React from 'react';
+import Input from './Input';
 
-export default List
+const List = (props) => {
+	
+	var input = props.places.map(function (elem, index) {
+		return (
+			<Input key={index} onPlaceChange={props.onPlaceChange} value={elem} />
+		);
+	})
+
+	console.log(input)
+	return (
+		<div>
+			{props.title}
+
+			{input}
+		</div>
+	);
+};
+
+export default List;
