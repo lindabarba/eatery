@@ -3,6 +3,15 @@ import List from './components/List'
 import './App.css';
 
 class App extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+      toEat: ["sushi", "ramen"],
+      eaten: ["poke"]
+    }
+  }
+
   render() {
     return (
       <div className="App container">
@@ -18,15 +27,14 @@ class App extends Component {
         <div className="row">
           <div className="col-sm-6">
            
-           <List title="Places to eat"/>
+           <List title="Places to eat" places={this.state.toEat}/>
 
             <button className="btn btn-success">+</button>
           </div>
           <div className="col-sm-6">
           
-          <List title="Places we've eaten"/>
-           
-            
+          <List title="Places we've eaten" places={this.state.eaten}/>
+                 
           </div>
         </div>
         <div className="row">

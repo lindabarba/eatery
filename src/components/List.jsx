@@ -1,6 +1,8 @@
  import React, {Component} from 'react';
  
  const List = (props) => {
+              console.log(props)
+
      return (
         <div>
             {props.title}
