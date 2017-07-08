@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import List from './components/List'
 import './App.css';
 
 class App extends Component {
@@ -16,23 +17,16 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            Places To Eat
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
+           
+           <List title="Places to eat"/>
+
             <button className="btn btn-success">+</button>
           </div>
           <div className="col-sm-6">
-            Places Eaten
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
-            <div className="form-group">
-              <input type="text" className="form-control" id="exampleInputEmail1" placeholder="Email"></input>
-            </div>
+          
+          <List title="Places we've eaten"/>
+           
+            
           </div>
         </div>
         <div className="row">
