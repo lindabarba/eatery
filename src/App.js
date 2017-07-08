@@ -12,6 +12,10 @@ class App extends Component {
     }
   }
 
+  onPlaceChange(data) {
+    console.log('change', data.target.value)
+  }
+
   render() {
     return (
       <div className="App container">
@@ -26,11 +30,11 @@ class App extends Component {
         </div>
         <div className="row">
           <div className="col-sm-6">
-            <List title="Places to Eat" places={this.state.toEat} />
+            <List title="Places to Eat" places={this.state.toEat} onPlaceChange={this.onPlaceChange}/>
             <button className="btn btn-success">+</button>
           </div>
           <div className="col-sm-6">
-            <List title="Places We've Eaten" places={this.state.eaten} />
+            <List title="Places We've Eaten" places={this.state.eaten} onPlaceChange={this.onPlaceChange}/>
           </div>
         </div>
         <div className="row">
